@@ -12,13 +12,11 @@
     if ($password === $password_confirm) {
 
         $password = md5($password);
-        mysqli_query($connect, "INSERT INTO `users` (`id`, `last_name`, `login`, `first_name`, `password`) VALUES (NULL, '$last_name', '$login', '$first_name', '$password')");
-        $_SESSION['message'] = 'Регистрация прошла успешно!';
+        mysqli_query($mysql, "INSERT INTO `users` (`id`, `last_name`, `login`, `first_name`, `password`) VALUES (NULL, '$last_name', '$login', '$first_name', '$password')");
         header('Location: ../index.php');
 
 
     } else {
-        $_SESSION['message'] = 'Пароли не совпадают';
         header('Location: ../register.php');
     }
 

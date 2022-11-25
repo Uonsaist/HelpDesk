@@ -1,8 +1,5 @@
 <?php
 session_start();
-if (!$_SESSION['user']) {
-    header('Location: /');
-}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -17,7 +14,7 @@ if (!$_SESSION['user']) {
     <?php require "blocks/header.php" ?>
     <div class="container mt-5">
       <h3>Задать вопрос</h3>
-      <form action="check.php" method="post">
+      <form action="include/query.php" method="post">
           <input type="text" name="last_name" placeholder="Введите свою фамилию" class="form-control"><br>
           <input type="text" name="first_name" placeholder="Введите имя" class="form-control"><br>
           <textarea name="description" class="form-control" placeholder="Введите сообщение"></textarea><br>
