@@ -1,10 +1,6 @@
 <?php
 session_start();
 
-if ($_SESSION['user']) {
-    header('Location: major.php');
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -26,12 +22,6 @@ if ($_SESSION['user']) {
         <p>
             У вас нет аккаунта? - <a href="register.php">зарегистрируйтесь</a>!
         </p>
-        <?php
-            if ($_SESSION['message']) {
-                echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
-            }
-            unset($_SESSION['message']);
-        ?>
     </form>
 
   </body>
