@@ -1,11 +1,8 @@
 <?php
 
-    define('servername','localhost');
-    define('username','root');
-    define('password','');
-    define('dbname','helpdesk');
+    $connect = mysqli_connect('localhost','root','','helpdesk');
+    if(!$connect){
+      die('Ошибка подключения к БД');
+    }
 
-    $mysql = @new mysqli(servername,username,password,dbname);
-    if($mysql->connect_errno) exit('Ошибка подключения к БД');
-    $mysql->set_charset('utf8');
 ?>

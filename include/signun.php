@@ -12,7 +12,7 @@
     if ($password === $password_confirm) {
 
         $password = md5($password);
-        mysqli_query($mysql, "INSERT INTO `users` (`id`, `last_name`, `login`, `first_name`, `password`) VALUES (NULL, '$last_name', '$login', '$first_name', '$password')");
+        mysqli_query($connect, "INSERT INTO `users` (`id`, `last_name`, `login`, `first_name`, `password`) VALUES (NULL, '$last_name', '$login', '$first_name', '$password')");
         header('Location: ../index.php');
 
 

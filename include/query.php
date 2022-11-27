@@ -1,4 +1,5 @@
 <<?php
+
     session_start();
     require_once 'connect.php';
 
@@ -6,9 +7,8 @@
     $first_name = $_POST['first_name'];
     $description = $_POST['description'];
 
-    $mysql="INSERT INTO `request` (`id`, `last_name`, `first_name`, `description` )
-    VALUES (NULL, '$last_name', '$first_name', '$description')";
-
+    mysqli_query($connect,"INSERT INTO `request` (`id`, `last_name`, `first_name`, `description`, `user_id`)
+    VALUES (NULL, '$last_name', '$first_name', '$description', NULL)");
     header('Location: ../request.php');
 
  ?>

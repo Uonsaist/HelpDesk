@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Ноя 24 2022 г., 15:55
+-- Время создания: Ноя 27 2022 г., 08:50
 -- Версия сервера: 10.4.25-MariaDB
 -- Версия PHP: 8.1.10
 
@@ -29,11 +29,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `request` (
   `id` int(11) NOT NULL,
-  `last_name` varchar(255) NOT NULL,
-  `first_name` varchar(255) NOT NULL,
-  `description` mediumtext NOT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `first_name` varchar(255) DEFAULT NULL,
+  `description` mediumtext DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `request`
+--
+
+INSERT INTO `request` (`id`, `last_name`, `first_name`, `description`, `user_id`) VALUES
+(2, '12312', '213123', '1231321', NULL);
 
 -- --------------------------------------------------------
 
@@ -68,7 +75,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `last_name`, `login`, `first_name`, `password`, `staff_id`) VALUES
-(7, ' Макаров', '123', 'Даниил', '202cb962ac59075b964b07152d234b70', 0);
+(7, ' Макаров', '123', 'Даниил', '202cb962ac59075b964b07152d234b70', 0),
+(8, 'ваниль', 'rec', 'Даниил', '0b2c082c00e002a2f571cbe340644239', 0),
+(9, 'каябордин', '567', 'иван', '99c5e07b4d5de9d18c350cdf64c5aa3d', 0);
 
 --
 -- Индексы сохранённых таблиц
@@ -100,7 +109,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `request`
 --
 ALTER TABLE `request`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `staff`
@@ -112,7 +121,7 @@ ALTER TABLE `staff`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
