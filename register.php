@@ -25,7 +25,7 @@
        <input type="password" name="password" placeholder="Введите свой пароль">
        <label>Подтверждение пароль</label>
        <input type="password" name="password_confirm" placeholder="Подтаердите пароль">
-       <button>Войти</button>
+       <button>Зарегистрироваться</button>
         <p>
             У вас уже есть аккаунт? - <a href="/">авторизируйтесь</a>!
         </p>
