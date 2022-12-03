@@ -1,7 +1,7 @@
 <?php
-session_start();
-require_once '../include/connect.php';
-$result = mysqli_query($connect, "SELECT * FROM `request`");
+  session_start();
+  require_once '../include/connect.php';
+  $result = mysqli_query($connect, "SELECT * FROM `request`");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,28 +23,31 @@ $result = mysqli_query($connect, "SELECT * FROM `request`");
       <th>Фамилия</th>
       <th>Имя</th>
       <th>Описание</th>
+      <th>&#9998;</th>
+      <th>&#10006;</th>
     </tr>
    </thead>
   <tbody>
 
     <?php
-      while ($chart = mysqli_fetch_assoc($result)) {
-      ?>
+      $result = mysqli_fetch_all($result);
+      foreach($result as $char) {
+    ?>
     <tr>
-      <td><?php echo $chart['id']; ?></td>
-      <td><?php echo $chart['last_name']; ?></td>
-      <td><?php echo $chart['first_name']; ?></td>
-      <td><?php echo $chart['description']; ?></td>
+      <td><?= $char[0] ?></td>
+      <td><?= $char[1] ?></td>
+      <td><?= $char[2] ?></td>
+      <td><?= $char[3] ?></td>
+      <td><a href="update.php?id=<?= $char[0] ?>">Обновить</a></td>
+      <td><a href="../include/delete.php?id=<?= $char[0] ?>">Удалить</a></td>
     </tr>
     <?php
-  }
+      }
     ?>
 
   </tbody>
 </table>
 </div>
-
-
-
-  </body>
+  <?php require "foother1.php" ?>
+</body>
 </html>
