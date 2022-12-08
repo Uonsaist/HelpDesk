@@ -13,7 +13,7 @@ session_start();
   <body>
     <?php require "blocks/header.php" ?>
     <div class="container mt-5">
-      <h3>Задать вопрос</h3>
+      <h3>Задать вопрос</h3><br>
       <form action="include/query.php" method="post">
           <input type="text" name="last_name" placeholder="Введите свою фамилию" class="form-control"><br>
           <input type="text" name="first_name" placeholder="Введите имя" class="form-control"><br>

@@ -12,26 +12,33 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/rec.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
   <title>Обновление данных</title>
 </head>
 <body>
 
-  <a href="userss.php">Главная</a>
-  <hr>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3
+  px-mb-4 mb-3 bg-white border-bottom shadow-sm" >
+    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+      <a class="p-2 text-dark text-decoration-none" href="trunk.php" >Главная</a>
+    </nav>
+  </div>
 
-  <h2>Обновить дынные</h2>
-  <form action="../include/client.php" method="post">
-    <input type="hidden" name="id" value="<?= $result['id'] ?>">
-    <p>Фамилия</p>
-    <input type="text" name="last_name" value="<?= $result['last_name'] ?>">
-    <p>Имя</p>
-    <input type="text" name="first_name" value="<?= $result['first_name'] ?>">
-    <p>Логин</p>
-    <input type="text" name="login" value="<?= $result['login'] ?>">
-    <p>Имя</p>
-    <input type="text" name="password" value="<?= $result['password'] ?>">
-    <button type="submit">Обновить</button>
-  </form>
+  <div class="container mt-5">
+      <form action="../include/client.php" method="post">
+        <h3 >Обновить дынные</h3><br>
+        <input type="hidden"  class="form-control" name="id" value="<?= $result['id'] ?>">
+        <label>Фамилия</label>
+        <input type="text"  class="form-control" name="last_name" value="<?= $result['last_name'] ?>"><br>
+        <label>Имя</label>
+        <input type="text"  class="form-control" name="first_name" value="<?= $result['first_name'] ?>"><br>
+        <label>Логин</label>
+        <input type="text"  class="form-control" name="login" value="<?= $result['login'] ?>"><br>
+        <label>Пароль</label>
+        <input type="text"  class="form-control" name="password" value="<?= $result['password'] ?>"><br>
+        <button class="btn btn-success" type="submit">Обновить</button>
+      </form>
+    </div>
 
 </body>
 </html>
