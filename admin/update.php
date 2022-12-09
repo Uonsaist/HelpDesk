@@ -34,7 +34,7 @@
         <input type="text" class="form-control" name="first_name" value="<?= $result['first_name'] ?>"><br>
         <label>Описание</label>
         <textarea name="description" class="form-control"><?= $result['description'] ?></textarea><br>
-        <button class="btn btn-success" type="submit">Обновить</button>
+        <button class="btn btn-primary" type="submit">Обновить</button>
       </form>
     </div>
 </body>

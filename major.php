@@ -21,7 +21,7 @@ if (!$_SESSION['user']) {
   <?php require "blocks/header.php" ?>
 
   <div class="container mt-5">
-    <h3 class="mb-5">Популярные вопросы</h3>
+    <h3 class="mb-5">Популярные статьи</h3>
       <?php
         while ($articles = mysqli_fetch_assoc($result)) {
           ?>
@@ -32,7 +32,7 @@ if (!$_SESSION['user']) {
           <?php
         }
       ?>
-      
+
   </div>
     <?php require "blocks/footer.php" ?>
 </body>

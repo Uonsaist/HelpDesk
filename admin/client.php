@@ -36,7 +36,7 @@
         <input type="text"  class="form-control" name="login" value="<?= $result['login'] ?>"><br>
         <label>Пароль</label>
         <input type="text"  class="form-control" name="password" value="<?= $result['password'] ?>"><br>
-        <button class="btn btn-success" type="submit">Обновить</button>
+        <button class="btn btn-primary" type="submit">Обновить</button>
       </form>
     </div>
 

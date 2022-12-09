@@ -1,10 +1,3 @@
-<?php
-  require_once '../include/connect.php';
-
-  $result_id = $_GET['id'];
-  $result = mysqli_query($connect, "SELECT * FROM `articles` WHERE `id`='$result_id'");
-  $result = mysqli_fetch_assoc($result);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/rec.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-  <title>Обновление данных</title>
+  <title>Добавить статью</title>
 </head>
 <body>
   <div class="d-flex flex-column flex-md-row align-items-center p-3
@@ -24,13 +17,12 @@
   </div>
 
   <div class="container mt-5">
-      <form action="../include/refresh.php" method="post">
-        <h3 >Обновить дынные</h3>
-        <input type="hidden" class="form-control" name="id" value="<?= $result['id'] ?>"><br>
+      <form action="../include/add.php" method="post">
+        <h3 >Добавить статью</h3>
         <label>Заголовок</label>
-        <input type="text" class="form-control" name="header" value="<?= $result['header'] ?>"><br>
+        <input type="text"  class="form-control" name="header" placeholder="Введите название статьи"><br>
         <label>Описание</label>
-        <textarea class="form-control" name="description"><?= $result['description'] ?></textarea><br>
+        <textarea name="description" class="form-control" placeholder="Введите текст"></textarea><br>
         <button class="btn btn-primary" type="submit">Обновить</button>
       </form>
     </div>

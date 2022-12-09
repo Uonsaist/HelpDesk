@@ -34,8 +34,8 @@ $result = mysqli_query($connect, "SELECT * FROM `users`");
           <tr>
             <th>№</th>
             <th>Фамилия</th>
-            <th>Имя</th>
             <th>Логин</th>
+            <th>Имя</th>
             <th>Пароль</th>
             <th>&#9998;</th>
             <th>&#10006;</th>

@@ -24,7 +24,7 @@ $result = mysqli_query($connect, "SELECT * FROM `articles`");
 
     <a href="loggout.php" class="btn btn-primary ">Выход</a>
     <a style="margin: 2px 0;margin-left: 5px;"><?= $_SESSION['staff']['first_name'] ?></a>
-    
+
 </div>
 
       <div  class="container mt-5">
@@ -56,7 +56,11 @@ $result = mysqli_query($connect, "SELECT * FROM `articles`");
               ?>
 
         </tbody>
-      </table>
+      </table><br>
+      <form action="add.php">
+        <button type="submit"  class="btn btn-primary">Создать статью</button>
+      </form>
+
       </div>
       <?php require "foother1.php" ?>
     <?php else:

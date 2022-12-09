@@ -18,7 +18,7 @@ session_start();
           <input type="text" name="last_name" placeholder="Введите свою фамилию" class="form-control"><br>
           <input type="text" name="first_name" placeholder="Введите имя" class="form-control"><br>
           <textarea name="description" class="form-control" placeholder="Введите сообщение"></textarea><br>
-          <button type="submit" name="send" class="btn btn-success">Отправить</button>
+          <button type="submit" name="send" class="btn btn-primary">Отправить</button>
       </form>
     </div>
     <?php require "blocks/footer.php" ?>
