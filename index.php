@@ -2,7 +2,6 @@
 session_start();
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,8 +10,6 @@ session_start();
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <!-- Форма авторизации -->
-
     <form action="include/signin.php" method="post">
         <label>Логин</label>
         <input type="text" name="login" placeholder="Введите свой логин">
