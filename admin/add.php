@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +12,7 @@
   <title>Добавить статью</title>
 </head>
 <body>
+  <?php if(!empty($_SESSION['staff']['first_name'])):?>
   <div class="d-flex flex-column flex-md-row align-items-center p-3
   px-mb-4 mb-3 bg-white border-bottom shadow-sm" >
     <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
@@ -26,5 +30,10 @@
         <button class="btn btn-primary" type="submit">Обновить</button>
       </form>
     </div>
+  <?php else:
+    echo '<h3 class="p-2 text-dark text-decoration-none">Отказано</h3>';
+    echo '<a href="/" class="btn btn-primary" >На главную</a>';
+  ?>
+  <?php endif ?>
 </body>
 </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Дек 04 2022 г., 08:25
+-- Время создания: Дек 16 2022 г., 16:00
 -- Версия сервера: 10.4.25-MariaDB
 -- Версия PHP: 8.1.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `helpdesk`
+-- База данных: `helpdesk1`
 --
 
 -- --------------------------------------------------------
@@ -52,8 +52,8 @@ INSERT INTO `articles` (`id`, `header`, `description`, `staff_id`) VALUES
 
 CREATE TABLE `request` (
   `id` int(11) NOT NULL,
-  `last_name` varchar(255) DEFAULT NULL,
-  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
+  `first_name` varchar(45) DEFAULT NULL,
   `description` mediumtext DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -63,7 +63,7 @@ CREATE TABLE `request` (
 --
 
 INSERT INTO `request` (`id`, `last_name`, `first_name`, `description`, `user_id`) VALUES
-(2, 'Ujdjhby', 'sdfasefweaf', 'awefawefawefawef', NULL);
+(2, 'Михайлов', 'Алексей', 'Добрый день,.........?', NULL);
 
 -- --------------------------------------------------------
 
@@ -73,8 +73,8 @@ INSERT INTO `request` (`id`, `last_name`, `first_name`, `description`, `user_id`
 
 CREATE TABLE `staff` (
   `id` int(11) NOT NULL,
-  `first_name` varchar(255) NOT NULL,
-  `login` varchar(255) NOT NULL,
+  `first_name` varchar(45) NOT NULL,
+  `login` varchar(40) NOT NULL,
   `password` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -93,11 +93,11 @@ INSERT INTO `staff` (`id`, `first_name`, `login`, `password`) VALUES
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `last_name` varchar(255) DEFAULT NULL,
-  `login` varchar(100) DEFAULT NULL,
-  `first_name` varchar(255) DEFAULT NULL,
-  `password` varchar(500) DEFAULT NULL,
-  `staff_id` int(11) NOT NULL
+  `last_name` varchar(45) DEFAULT NULL,
+  `login` varchar(40) DEFAULT NULL,
+  `first_name` varchar(45) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  `staff_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -164,7 +164,7 @@ ALTER TABLE `staff`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
